@@ -3,6 +3,6 @@ Query:
      Query to display List of Tenants who are renting more than one apartments.
 
 
-SELECT MAX(t.TENANT_NAME) NAME,COUNT(a.APARTMENT_ID) noOfApartments  FROM tenants t JOIN 
-tenant_apartments a  USING (TENANT_ID) GROUP BY t.TENANT_ID
+SELECT MAX(TENANT_NAME) NAME,COUNT(APARTMENT_ID) noOfApartments  FROM tenants JOIN 
+tenant_apartments   USING (TENANT_ID) GROUP BY TENANT_ID
 HAVING noOfApartments > 1
